@@ -1,7 +1,7 @@
 # Red Hat RHCSA-RHCE 7 Cert Guide (Lab Environment)
 
 ## About
-This is a copy of [this repo by ](https://github.com/AnwarYagoub/RHCSA-RHCE-Lab-Environment) 
+This is a copy of [this repo](https://github.com/AnwarYagoub/RHCSA-RHCE-Lab-Environment) by @AnwarYagoub 
 
 ## What is included?
 - server1: CentOS box (Server With GUI).
@@ -9,75 +9,10 @@ This is a copy of [this repo by ](https://github.com/AnwarYagoub/RHCSA-RHCE-Lab-
 - cache-server: Debian box used for package caching.
 - labipa: CentOS box with FreeIPA configured.
 
-## install dependencies:
+## Install dependencies:
 - [Virtualbox](https://www.virtualbox.org): cross-platform virtualization application.
 - [Vagrant](https://www.vagrantup.com): tool for building complete development environments. With an easy-to-use workflow and focus on automation
 
-Don't worry you don't have to be expert on any of these tools.
-### 1. Install virtualbox :
-
-**1.1 Install virtualbox on Ubuntu:**
-
-```shell
-$ wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
-
-$ sudo sh -c 'echo "deb https://download.virtualbox.org/virtualbox/debian `lsb_release -sc` non-free contrib" > /etc/apt/sources.list.d/virtualbox.org.list'
-
-$ sudo apt-get update
-
-$ sudo apt-get install dkms
-
-$ sudo apt-get install virtualbox-5.2
-```
-**1.2 Install virtualbox on Oracle Linux/RHEL/CentOS:**
-```shell
-$ wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | rpm --import -
-
-$ sudo wget https://download.virtualbox.org/virtualbox/rpm/el/virtualbox.repo -O /etc/yum.repos.d/virtualbox.repo
-
-$ sudo yum install VirtualBox-5.2
-```
-
-**1.3 Install virtualbox on Fedora:**
-```shell
-$ wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | rpm --import -
-
-$ sudo wget https://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo -O /etc/yum.repos.d/virtualbox.repo
-
-$ sudo yum install VirtualBox-5.2
-```
-### 2. Install vagrant :
-
-**2.1 Install vagrant on Debian-based Linux Ubuntu/Mint (64-bit):**
-```shell
-$ wget https://releases.hashicorp.com/vagrant/2.1.0/vagrant_2.1.0_x86_64.deb
-
-$ sudo dpkg -i vagrant_2.1.0_x86_64.deb
-```
-
-**2.2 Install vagrant on Debian-based distributions Ubuntu/Mint (32-bit):**
-```shell
-$ wget https://releases.hashicorp.com/vagrant/2.1.0/vagrant_2.1.0_i686.deb
-
-$ sudo dpkg -i vagrant_2.1.0_i686.deb
-```
-
-**2.3 Install vagrant on RedHat-based distributions (64-bit):**
-```shell
-$ sudo yum -y install https://releases.hashicorp.com/vagrant/2.1.0/vagrant_2.1.0_x86_64.rpm
-```
-
-**2.4 Install vagrant on RedHat-based distributions (32-bit):**
-```shell
-$ sudo yum -y install https://releases.hashicorp.com/vagrant/2.1.0/vagrant_2.1.0_i686.rpm
-```
-
-## Get environment
-```shell
-$ git clone https://github.com/jszigetvari/RHCSA-RHCE-Lab-Environment.git
-
-$ cd RHCSA-RHCE-Lab-Environment
-```
 ## How to start servers?
 Navigate to project path where Vagranfile exists.
 
@@ -85,24 +20,17 @@ Navigate to project path where Vagranfile exists.
 ```shell
 $ vagrant up
 ```
-- start a specific server
+- start a specific server (server1, server2, cache-server, labipa)
 ```shell
 $ vagrant up MACHINE_NAME
 ```
-replace **MACHINE_NAME** with any of (server1, server2, cache-server, labipa)
-```shell
-$ vagrant up server1
-```
+
 ## How to access servers?
 Navigate to project path where Vagranfile exists.
 
 - to get shell access to any of environment servers
 ```shell
 $ vagrant ssh MACHINE_NAME
-```
-replace **MACHINE_NAME** with any of (server1, server2, cache-server, labipa)
-```shell
-$ vagrant ssh server1
 ```
 - You can also access servers using ip addresses listed below.
 ```shell
@@ -119,11 +47,6 @@ $ vagrant halt
 ```shell
 $ vagrant halt MACHINE_NAME
 ```
-replace **MACHINE_NAME** with any of (server1, server2, cache-server, labipa)
-```shell
-$ vagrant halt server1
-```
-
 ## IP addresses & credentials
 | Server | IP address | username | password | username | password |
 |---|---|:---:|:---:|:---:|:---:|
