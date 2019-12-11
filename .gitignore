@@ -3,4 +3,4 @@
 *.retry
 *.iml
 .DS_Store
-.idea/
+.idea
